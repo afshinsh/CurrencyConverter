@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CurrencyConverter.BFS
+namespace CurrencyConverter.DFS
 {
     internal class Node
     {
-        public int NodeHashCode { get; set; }
         public string Name { get; set; }
         public LinkedList<Edge> Edges;
     }

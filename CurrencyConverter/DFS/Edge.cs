@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CurrencyConverter.BFS
+namespace CurrencyConverter.DFS
 {
     internal class Edge
     {
-        public int DestinationHashCode { get; set; }
         public string DestinationName { get; set; }
         public double ConversionRate { get; set; }
     }
