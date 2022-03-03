@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CurrencyConverter.BFS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,23 +9,26 @@ namespace CurrencyConverter
 {
     public class CurrencyConverter : ICurrencyConverter
     {
-        public CurrencyConverter()
-        {
+        Graph graph;
 
-        }
         public void ClearConfiguration()
         {
-            throw new NotImplementedException();
+            graph = null;
         }
 
-        public double Convert(string fromCurrency, string toCurrency, double amount)
+        public double Convert(string fromCurrency, string toCurrency, double amount) 
         {
-            throw new NotImplementedException();
+
+            return graph.DFSRecursive(fromCurrency, toCurrency, amount);
         }
 
         public void UpdateConfiguration(IEnumerable<Tuple<string, string, double>> conversionRates)
         {
-            throw new NotImplementedException();
+            if(graph == null)
+                graph = new Graph(conversionRates);
+            else
+                graph = graph.UpdateConfigurations(conversionRates);
+
         }
     }
 }

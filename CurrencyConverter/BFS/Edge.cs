@@ -9,6 +9,7 @@ namespace CurrencyConverter.BFS
     internal class Edge
     {
         public int DestinationHashCode { get; set; }
+        public string DestinationName { get; set; }
         public double ConversionRate { get; set; }
     }
 }

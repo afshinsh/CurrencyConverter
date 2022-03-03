@@ -9,6 +9,7 @@ namespace CurrencyConverter.BFS
     internal class Node
     {
         public int NodeHashCode { get; set; }
+        public string Name { get; set; }
         public LinkedList<Edge> Edges;
     }
 }

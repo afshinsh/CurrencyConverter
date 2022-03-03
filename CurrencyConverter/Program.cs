@@ -9,12 +9,14 @@ namespace CurrencyConverter
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
             List<Tuple<string, string, double>> conversionRates = new();
             conversionRates.Add(new Tuple<string, string, double>("USD", "CAD", 1.34));
             conversionRates.Add(new Tuple<string, string, double>("CAD", "GBR", 0.58));
             conversionRates.Add(new Tuple<string, string, double>("USD", "EUR", 0.86));
-            new Graph(10, conversionRates);
+            conversionRates.Add(new Tuple<string, string, double>("EUR", "GBR", 0.9));
+            var convertor = new CurrencyConverter();
+            convertor.UpdateConfiguration(conversionRates);
+            Console.WriteLine(convertor.Convert("CAD", "EUR", 10));
         }
     }
 }
