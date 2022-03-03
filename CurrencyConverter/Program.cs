@@ -1,7 +1,5 @@
-﻿using CurrencyConverter.DFS;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace CurrencyConverter
 {
@@ -16,7 +14,7 @@ namespace CurrencyConverter
             conversionRates.Add(new Tuple<string, string, double>("EUR", "GBR", 0.9));
             var convertor = new CurrencyConverter();
             convertor.UpdateConfiguration(conversionRates);
-            Console.WriteLine(convertor.Convert("USD", "GBR", 10));
+            Console.WriteLine(convertor.Convert("USD", "CAD", 10));
         }
     }
 }
